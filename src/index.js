@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Root from './Root';
+import App from './components/App';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Root>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  </ Root>, document.querySelector('#root')
+)
 
 
