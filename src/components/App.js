@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Ancient Greek Flashcard App</h1>
+          <h1>Μνημοσύνη</h1>
         </header>
         <Card />
         <button onClick={this.props.fetchCards}>Get Cards</button>
