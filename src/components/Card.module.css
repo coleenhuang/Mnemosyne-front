@@ -1,12 +1,14 @@
-.flipper {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 150px;
+.flip_container {
+    position: relative;
 }
 
 .card_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: transform .8s ease;
     width: 350px;
     height: 200px;
     border: 0.5px black solid;
@@ -15,16 +17,6 @@
     margin-right: auto;
 }
 
-.hidden {
-    transform: rotateX(-180deg) translateY(5%) scale(1.1);
-    opacity: 0;
-    z-index: 5;
-}
-
-.visible {
-    transform: none;
-    opacity: 1;
-}
 
 .front {
     background-color: aliceblue;
@@ -33,3 +25,12 @@
 .back {
     background-color: antiquewhite;
 }
+
+.visible{
+    transform: rotateX(0);
+}
+
+.hidden{
+    transform: rotateX(-180deg);
+}
+

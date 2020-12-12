@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import styles from './Card.module.css';
 
 const Card = () => {
-    const [show, setShow] = useState(true)
-    //FIXME: need to somehow nest the front and back of the card on top of one another
+    const [flip, setFlip] = useState(true)
+    
     return (
-        <div className={styles.flipper} onClick={() => setShow(!show)}>
-            <div className={`${styles.front} ${styles.card_face} ${show?styles.visible:styles.hidden}`}>Front</div>
-            <div className={`${styles.back} ${styles.card_face} ${show?styles.hidden:styles.visible}`}>Back</div>
+        <div className={styles.flip_container} onClick={() => setFlip(!flip)}>
+            <div className={
+                `${styles.front} ${styles.card_face} ${flip?styles.visible:styles.hidden}`}>Front</div>
+            <div className={`${styles.back} ${styles.card_face} ${flip?styles.hidden:styles.visible}`}>Back</div>
         </div>
     )
 }
