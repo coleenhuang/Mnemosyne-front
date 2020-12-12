@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import Card from './Card';
 import { connect } from 'react-redux';
-import * as actions from '../actions'
+import * as actions from '../actions';
+import CardContainer from './CardContainer';
 
 class App extends React.Component {
-  
+  componentDidMount(){
+    this.props.fetchCards()
+  }
   render () {
     console.log(this.props.cardsList)
     return (
@@ -13,8 +15,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Μνημοσύνη</h1>
         </header>
-        <Card />
-        <button onClick={this.props.fetchCards}>Get Cards</button>
+          <CardContainer />
       </div>
     );}
 }

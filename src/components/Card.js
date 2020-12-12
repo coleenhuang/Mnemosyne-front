@@ -3,8 +3,9 @@ import styles from './Card.module.css';
 
 const Card = () => {
     return (
-        <div className={styles.card}>
-            <p>This is a Card</p>
+        <div className={'flipper'}>
+            <div className={`${styles.front} ${styles.card}`}>Front</div>
+            <div className={`${styles.back} ${styles.card}`}>Back</div>
         </div>
     )
 }
