@@ -1,4 +1,12 @@
-.card {
+.flipper {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 150px;
+}
+
+.card_face {
     width: 350px;
     height: 200px;
     border: 0.5px black solid;
@@ -7,6 +15,21 @@
     margin-right: auto;
 }
 
-.back {
+.hidden {
+    transform: rotateX(-180deg) translateY(5%) scale(1.1);
     opacity: 0;
+    z-index: 5;
+}
+
+.visible {
+    transform: none;
+    opacity: 1;
+}
+
+.front {
+    background-color: aliceblue;
+}
+
+.back {
+    background-color: antiquewhite;
 }
