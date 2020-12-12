@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_CARDS, SHOW_ANSWER } from './types'
+import { FETCH_CARDS, CREATE_CARDS} from './types'
 
 export function fetchCards() {
     const response = axios.get('http://localhost:3002/parts')
@@ -9,8 +9,10 @@ export function fetchCards() {
     }
 }
 
-export function showAnswer() {
+export function createCards(info) {
     return {
-        type: SHOW_ANSWER
+        type: CREATE_CARDS,
+        payload: info
     }
 }
+

@@ -8,8 +8,15 @@ class App extends React.Component {
   componentDidMount(){
     this.props.fetchCards()
   }
+
+  componentDidUpdate(){
+    if (this.props.cardsData.length > 0 && this.props.cardsList.length === 0) {
+      this.props.createCards(this.props.cardsData);
+    }
+  }
+
   render () {
-    console.log(this.props.cardsList)
+    console.log(this.props)
     return (
       <div className="App">
         <header className="App-header">
@@ -19,9 +26,14 @@ class App extends React.Component {
       </div>
     );}
 }
- function mapStateToProps(state) {
-  return {cardsList: state.cardsList}
- }
+
+function mapStateToProps(state) {
+  return {
+    cardsData: state.cardsData,
+    cardsList: state.cardsList
+  }
+}
+ 
 
 
 export default connect(mapStateToProps, actions)(App);

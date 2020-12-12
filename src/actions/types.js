@@ -1,2 +1,2 @@
 export const FETCH_CARDS = 'fetch_cards';
-export const SHOW_ANSWER = 'show_answer';
+export const CREATE_CARDS = 'create_cards';
