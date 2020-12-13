@@ -5,9 +5,9 @@ import * as actions from '../actions'
 const Controls = (props) =>{
     return (
         <div>
-            <button>back</button>
+            <button onClick={props.prevCard}>back</button>
             <span>{`< ${props.index + 1} / 6 >`}</span>
-            <button>next</button>
+            <button onClick={props.nextCard}>next</button>
         </div>
     )
 
