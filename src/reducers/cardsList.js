@@ -3,7 +3,7 @@ import { CREATE_CARDS } from '../actions/types'
 export default function (state=[], action) {
     switch (action.type) {
         case CREATE_CARDS:
-            const list = action.payload[0].map(card => (
+            const list = action.payload.map(card => (
                 {
                     id: card.id, 
                     front: card.present, 
