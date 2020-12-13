@@ -14,7 +14,7 @@ class App extends React.Component {
       this.props.createCards(this.props.cardsData);
     }
   }
-
+  
   render () {
     console.log(this.props)
     return (
@@ -22,7 +22,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Μνημοσύνη</h1>
         </header>
-          <CardContainer />
+          {this.props.cardsList.length > 0?<CardContainer /> : null}
       </div>
     );}
 }
