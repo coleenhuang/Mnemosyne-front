@@ -5,11 +5,10 @@ import Controls from './Controls';
 
 
 const CardContainer = () => {
-    const [index, setIndex] = useState(0)
     return (
     <div>
-        <Card index={index}/>
-        <Controls index={index}/>
+        <Card />
+        <Controls />
     </div>)
 }
 
