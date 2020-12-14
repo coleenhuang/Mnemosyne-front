@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions'
+import styles from './Controls.module.css'
 
 const Controls = (props) =>{
     return (
-        <div>
+        <div className={styles.control_container}>
             <button onClick={props.prevCard}>back</button>
             <span>{`< ${props.index + 1} / ${props.listLength} >`}</span>
             <button onClick={props.nextCard}>next</button>

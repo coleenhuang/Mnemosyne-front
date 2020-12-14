@@ -9,21 +9,36 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     backface-visibility: hidden;
     overflow: hidden;
     transition: transform .32s ease-in-out;
     width: inherit;
     height: inherit;
     border-radius: 5%;
+    
 }
 
 
 .front {
     background-color: aliceblue;
 }
+.flex_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.front p {
+    font-size: 25px;
+}
 
 .back {
     background-color: antiquewhite;
+}
+
+.back li {
+    list-style-type: none;
 }
 
 .visible{
@@ -31,7 +46,6 @@
 }
 
 .hidden{
-    transform: rotateX(-180deg) translateY(5%);
-    
+    transform: rotateX(-180deg); 
 }
 

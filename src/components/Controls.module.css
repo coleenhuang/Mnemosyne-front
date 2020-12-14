@@ -1,0 +1,7 @@
+.control_container {
+    padding: 1.5rem;
+}
+
+.control_container > * {
+    margin: 0 1rem;
+}

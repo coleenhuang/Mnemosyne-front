@@ -8,10 +8,10 @@ const Card = (props) => {
     return (
         <div className={styles.flip_container} onClick={() => setFlip(!flip)}>
             <div className={
-                `${styles.front} ${styles.card_face} ${flip?styles.visible:styles.hidden}`}>
+                `${styles.front} ${styles.card_face} ${styles.flex_container} ${flip?styles.visible:styles.hidden}`}>
                     <p>{props.card.front}</p>
             </div>
-            <div className={`${styles.back} ${styles.card_face} ${flip?styles.hidden:styles.visible}`}>
+            <div className={`${styles.back} ${styles.flex_container} ${styles.card_face} ${flip?styles.hidden:styles.visible}`}>
                 <p>{props.card.def}</p>
                 <ul>
                     {renderParts(props.card.back)}
