@@ -6,9 +6,9 @@ import styles from './Controls.module.css'
 const Controls = (props) =>{
     return (
         <div className={styles.control_container}>
-            <button onClick={props.prevCard}>back</button>
+            <button disabled={props.index === 0}onClick={props.prevCard}>back</button>
             <span>{`< ${props.index + 1} / ${props.listLength} >`}</span>
-            <button onClick={props.nextCard}>next</button>
+            <button disabled={(props.index+1) === props.listLength} onClick={props.nextCard}>next</button>
         </div>
     )
 
