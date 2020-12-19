@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_FOLDERS, FETCH_SETS, FETCH_VOCAB, FETCH_CARDS, CREATE_CARDS, NEXT_CARD, PREV_CARD} from './types'
+import { FETCH_FOLDERS, FETCH_SETS, FETCH_VOCAB, FETCH_CARDS, CREATE_CARDS, NEXT_CARD, PREV_CARD, CLEAR_FOLDERS} from './types'
 
 export function fetchFolders() {
     const response = axios.get('http://localhost:3002/folders')
@@ -49,6 +49,12 @@ export function nextCard() {
 export function prevCard() {
     return {
         type: PREV_CARD
+    }
+}
+
+export function clearFolders() {
+    return {
+        type: CLEAR_FOLDERS
     }
 }
 
