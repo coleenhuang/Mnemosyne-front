@@ -29,7 +29,9 @@ class App extends React.Component {
         </header>
         <Switch>
           <Route exact path="/" component={FolderContainer} />
-          <Route path="/sets" component={SetContainer} />
+          <Route path="/folder/:name">
+            <SetContainer />
+          </Route>
         </Switch>
           {/*this.props.cardsList.length > 0?<CardContainer /> : null*/}
       </div>

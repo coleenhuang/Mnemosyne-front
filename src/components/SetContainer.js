@@ -1,7 +1,9 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const SetContainer = () => {
-    return <div>Set container</div>
+    let params = useParams();
+    return <div>Current parameter is {params.name}</div>
 }
 
 export default SetContainer;

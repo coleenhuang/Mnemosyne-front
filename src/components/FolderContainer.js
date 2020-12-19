@@ -21,7 +21,7 @@ class FolderContainer extends React.Component {
       //renders folders from list
     if (this.props.folderList.length > 0) {
         return this.props.folderList.map((folder, index) => 
-        <Folder key={folder.id} name={folder.folder_name}/>)
+        <Folder key={index} name={folder.folder_name} folder_id={folder.id}/>)
     }
     else {
         return null
@@ -30,7 +30,10 @@ class FolderContainer extends React.Component {
 
   render() {
       return (
-          this.renderFolders()
+        <div>
+              {this.renderFolders()}
+        </div>
+          
       )
   }
 }
