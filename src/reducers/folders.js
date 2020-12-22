@@ -5,7 +5,7 @@ export default function foldersReducer(state=[], action) {
         case FETCH_FOLDERS:
             return [...state, ...action.payload.data];
         case CLEAR_FOLDERS:
-            return undefined
+            return []
         default:
             return [...state]
     }
