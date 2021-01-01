@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import Card from './Card';
+import { useParams } from 'react-router-dom';
 import Controls from './Controls';
-
+import VocabCard from './VocabCard';
+import PartsCard from './PartsCard';
 
 const CardContainer = () => {
+    const params = useParams()
     return (
     <div>
-        <Card />
+        {params.name === 'parts'? <PartsCard /> : <VocabCard />}
         <Controls />
     </div>)
 }

@@ -7,6 +7,65 @@ a {
   text-decoration: none;
 }
 
+.card {
+  margin: 1rem auto;
+  width: 300px;
+  height: 150px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip_container{
+  position: relative;
+  width: 350px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.card_face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: transform .32s ease-in-out;
+  width: inherit;
+  height: inherit;
+  border-radius: 5%;
+  
+}
+
+.front {
+  background-color: aliceblue;
+}
+.flex_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.front p {
+  font-size: 25px;
+}
+
+.back {
+  background-color: antiquewhite;
+}
+
+.back li {
+  list-style-type: none;
+}
+
+.visible{
+  transform: rotateX(0);
+}
+
+.hidden{
+  transform: rotateX(-180deg); 
+}
 
 
 

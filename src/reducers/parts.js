@@ -1,8 +1,8 @@
-import { CREATE_CARDS, FETCH_CARDS } from '../actions/types'
+import { CREATE_CARDS, FETCH_PARTS } from '../actions/types'
 
 export default function(state=[], action) {
     switch(action.type) {
-        case FETCH_CARDS:
+        case FETCH_PARTS:
             return [...state, ...action.payload.data];
         case CREATE_CARDS:
             return []

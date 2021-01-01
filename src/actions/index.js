@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_FOLDERS, FETCH_SETS, FETCH_VOCAB, FETCH_CARDS, CREATE_CARDS, NEXT_CARD, PREV_CARD, CLEAR_FOLDERS, CLEAR_CARDS, CLEAR_SETS} from './types'
+import { FETCH_FOLDERS, FETCH_SETS, FETCH_VOCAB, FETCH_PARTS, CREATE_CARDS, NEXT_CARD, PREV_CARD, RESET_INDEX, CLEAR_FOLDERS, CLEAR_CARDS, CLEAR_SETS} from './types'
 
 export function fetchFolders() {
     const response = axios.get('http://localhost:3002/folders')
@@ -25,10 +25,10 @@ export function fetchVocab(setId) {
     }
 }
 
-export function fetchCards() {
+export function fetchParts() {
     const response = axios.get('http://localhost:3002/parts')
     return {
-        type: FETCH_CARDS,
+        type: FETCH_PARTS,
         payload: response
     }
 }
@@ -52,6 +52,12 @@ export function prevCard() {
     }
 }
 
+export function resetIndex() {
+    return {
+        type: RESET_INDEX
+    }
+}
+
 export function clearFolders() {
     return {
         type: CLEAR_FOLDERS
@@ -69,5 +75,7 @@ export function clearCards() {
         type: CLEAR_CARDS
     }
 }
+
+
 
 

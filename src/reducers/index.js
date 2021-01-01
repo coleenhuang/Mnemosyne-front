@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
-import cardsData from './cardsData'
-import cardsList from './cardsList'
+import parts from './parts'
 import cardIndex from './cardIndex'
 import folders from './folders'
 import sets from './sets'
+import vocab from './vocab'
 
 export default combineReducers({
     folders: folders,
     sets: sets,
-    cardsData: cardsData,
-    cardsList: cardsList,
-    cardIndex: cardIndex
+    parts: parts,
+    cardIndex: cardIndex,
+    vocabList: vocab
 })

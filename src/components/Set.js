@@ -1,14 +1,20 @@
 import React from 'react';
-import styles from './Set.module.css';
-
+import * as actions from '../actions'
+import { useHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 const Set = (props) => {
+    const history = useHistory();
+    const handleClick = () => {
+        props.fetchVocab(props.set_id)
+        history.push(`/set/${props.name}`)
+    }
     return (
-    <div className={styles.set}>  
+    <div className='card' onClick={handleClick}>  
         <p>{props.name}</p>
     </div>
     )
 }
 
-export default Set;
+export default connect(null, actions)(Set);
 
