@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as actions from '../actions'
 import Folder from './Folder';
 
@@ -7,6 +8,7 @@ class FolderContainer extends React.Component {
     constructor(props) {
         super(props);
         this.renderFolders = this.renderFolders.bind(this);
+        this.handleClick = this.handleClick.bind(this)
     }
     componentDidMount(){
     //fetches the list of folders from API
@@ -28,12 +30,22 @@ class FolderContainer extends React.Component {
     }
   }
 
+  
+  handleClick(){
+        this.props.fetchParts()
+        this.props.history.push('/set/parts')
+    }
+
   render() {
       return (
         <div>
               {this.renderFolders()}
+            
+            <div className='card' onClick={this.handleClick}>
+                <p>Principal Parts</p>
+            </div>
         </div>
-          
+        
       )
   }
 }

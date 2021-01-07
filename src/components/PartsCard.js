@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions'
@@ -5,21 +6,17 @@ import * as actions from '../actions'
 const PartsCard = (props) => {
     const [flip, setFlip] = useState(true)
     
-    const cardInfo = createCards(props.parts[props.index])
+    const renderParts = () => {
+        if (props.parts.length > 0) {
+            createCards(props.parts[props.index])
+        }
+        else {
+            return null
+        }
+    }
 
     return (
-        <div className='flip_container' onClick={() => setFlip(!flip)}>
-            <div className={
-                `front card_face flex_container} ${flip?'visible':'hidden'}`}>
-                    <p>{cardInfo.front}</p>
-            </div>
-            <div className={`back flex_container card_face} ${flip?'hidden':'visible'}`}>
-                <p>{cardInfo.def}</p>
-                <ul>
-                    {renderParts(cardInfo.back)}
-                </ul>
-            </div>
-        </div>
+        <div>{}</ div>
     )
 }
 
@@ -32,6 +29,19 @@ function createCards(card) {
     }
     return info
 }
+
+/*<div className='flip_container' onClick={() => setFlip(!flip)}>
+            <div className={
+                `front card_face flex_container ${flip?'visible':'hidden'}`}>
+                    <p>{cardInfo.front}</p>
+            </div>
+            <div className={`back flex_container card_face ${flip?'hidden':'visible'}`}>
+                <p>{cardInfo.def}</p>
+                <ul>
+                    {renderParts(cardInfo.back)}
+                </ul>
+            </div>
+            </div>*/
 
 function renderParts(list) {
 return list.map((part, index) => <li key={index}> {part}</li>)

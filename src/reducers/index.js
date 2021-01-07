@@ -10,5 +10,5 @@ export default combineReducers({
     sets: sets,
     parts: parts,
     cardIndex: cardIndex,
-    vocabList: vocab
+    vocab: vocab
 })

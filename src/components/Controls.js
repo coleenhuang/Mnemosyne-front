@@ -6,17 +6,12 @@ import styles from './Controls.module.css'
 const Controls = (props) =>{
     return (
         <div className={styles.control_container}>
-            <button disabled={props.index === 0}onClick={props.prevCard}>back</button>
-            <span>{`< ${props.index + 1} / ${props.listLength} >`}</span>
-            <button disabled={(props.index+1) === props.listLength} onClick={props.nextCard}>next</button>
+            <button disabled={props.cardIndex === 0} onClick={props.prev}>back</button>
+            <span>{`< ${props.cardIndex + 1} / ${props.listLength} >`}</span>
+            <button disabled={(props.cardIndex+1) === props.listLength} onClick={props.next}>next</button>
         </div>
     )
 
 }
-function mapStateToProps(state) {
-    return {
-        index: state.cardIndex,
-        listLength: state.cardsList.length
-        }
-}
-export default connect(mapStateToProps, actions)(Controls);
+
+export default Controls;

@@ -1,22 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom'
 import Set from './Set'
 import * as actions from '../actions'
 
 
 const SetContainer = (props) => {
-    const history = useHistory();
-    const handleClick = () => {
-        props.fetchParts()
-        history.push('/set/parts')
-    }
     return (
     <div>
         {renderSets(props.setList)}
-        <div className='card' onClick={handleClick}>
-            <p>Principal Parts</p>
-        </div>
     </div>
     )
 }
