@@ -14,7 +14,15 @@ const CardContainer = (props) => {
 
     const nextCard = () => setIndex(index + 1)
     const prevCard = () => setIndex(index - 1)
-
+    
+    useEffect(() => {
+        return () => {
+            //clean up cards
+            props.clearCards();
+        };
+      }, []);
+    
+    
     return (
     <div>
         {renderCards(cardList, isParts, index)}
@@ -24,14 +32,12 @@ const CardContainer = (props) => {
 
 
 function renderCards(cardData, parts, index) {
-    //parts is a boolean
     if (cardData.length > 0) {
         if (parts) {
             let cardInfo = createCards(cardData[index])
             return <Card front={cardInfo.front} def={cardInfo.def} otherParts={cardInfo.otherParts}/>
         }
         else {
-            console.log(cardData)
             return <Card front={cardData[index].word} def={cardData[index].def_en}/>
         }  
     }

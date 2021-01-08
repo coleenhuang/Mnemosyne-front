@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_FOLDERS, FETCH_SETS, FETCH_VOCAB, FETCH_PARTS, CREATE_CARDS, NEXT_CARD, PREV_CARD, RESET_INDEX, CLEAR_FOLDERS, CLEAR_CARDS, CLEAR_SETS} from './types'
+import { FETCH_FOLDERS, FETCH_SETS, FETCH_VOCAB, FETCH_PARTS, NEXT_CARD, PREV_CARD, RESET_INDEX, CLEAR_FOLDERS, CLEAR_CARDS, CLEAR_SETS} from './types'
 
 export function fetchFolders() {
     const response = axios.get('http://localhost:3002/folders')
@@ -33,12 +33,6 @@ export function fetchParts() {
     }
 }
 
-export function createCards(info) {
-    return {
-        type: CREATE_CARDS,
-        payload: info
-    }
-}
 
 export function nextCard() {
     return {

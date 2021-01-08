@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
-import CardContainer from './CardContainer';
 import FolderContainer from './FolderContainer';
 import SetContainer from './SetContainer';
+import CardContainer from './CardContainer';
 
 
 class App extends React.Component {

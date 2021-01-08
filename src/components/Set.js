@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 const Set = (props) => {
     const history = useHistory();
     const handleClick = () => {
+        console.log(props)
         props.fetchVocab(props.set_id)
         history.push(`/set/${props.name}`)
     }

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Set from './Set'
 import * as actions from '../actions'
 
 
 const SetContainer = (props) => {
+    //need to populate the container on initial render
+    useEffect(() => {
+        return () => {
+            props.clearSets();
+        };
+      }, []);
     return (
     <div>
         {renderSets(props.setList)}
