@@ -18,7 +18,7 @@ export function fetchSets(folderId) {
 }
 
 export function fetchVocab(setId) {
-    const response = axios.get(`http://localhost:3002/folders/${setId}`)
+    const response = axios.get(`http://localhost:3002/sets/${setId}`)
     return {
         type: FETCH_VOCAB,
         payload: response

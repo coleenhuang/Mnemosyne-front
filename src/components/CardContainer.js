@@ -30,7 +30,10 @@ function renderCards(cardData, parts, index) {
             let cardInfo = createCards(cardData[index])
             return <Card front={cardInfo.front} def={cardInfo.def} otherParts={cardInfo.otherParts}/>
         }
-        return <Card front={cardData.word} def={cardData.def_en}/>
+        else {
+            console.log(cardData)
+            return <Card front={cardData[index].word} def={cardData[index].def_en}/>
+        }  
     }
     else {
         return null
