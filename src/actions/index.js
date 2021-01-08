@@ -34,23 +34,6 @@ export function fetchParts() {
 }
 
 
-export function nextCard() {
-    return {
-        type: NEXT_CARD
-    }
-}
-
-export function prevCard() {
-    return {
-        type: PREV_CARD
-    }
-}
-
-export function resetIndex() {
-    return {
-        type: RESET_INDEX
-    }
-}
 
 export function clearFolders() {
     return {
