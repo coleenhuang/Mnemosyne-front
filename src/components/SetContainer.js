@@ -7,10 +7,14 @@ import * as actions from '../actions'
 const SetContainer = (props) => {
     //need to populate the container on initial render
     useEffect(() => {
+        if (props.folderId > 0) {
+            props.fetchSets(props.folderId)
+        } 
+        
         return () => {
             props.clearSets();
         };
-      }, []);
+      }, [props.folderId]);
     return (
     <div>
         {renderSets(props.setList)}
@@ -32,7 +36,8 @@ function renderSets(setList) {
 
 function mapStateToProps(state) {
     return {
-        setList: state.sets
+        setList: state.sets,
+        folderId: state.folderId
     }
 }
 

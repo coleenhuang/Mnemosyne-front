@@ -40,11 +40,6 @@ export function fetchFolderId(id) {
     }
 }
 
-export function clearFolderId() {
-    return {
-        type: CLEAR_FOLDER_ID
-    }
-}
 
 export function clearFolders() {
     return {

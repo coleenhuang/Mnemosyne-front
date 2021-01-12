@@ -6,7 +6,8 @@ import { useHistory } from 'react-router-dom'
 const Folder = (props) => {
     const history = useHistory();
     const handleClick = () => {
-        props.fetchSets(props.folder_id)
+        //props.fetchSets(props.folder_id)
+        props.fetchFolderId(props.folder_id)
         history.push(`/folder/${props.name}`)
     }
     return (
